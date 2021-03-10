@@ -44,11 +44,13 @@ $valorPromocional = $totalAulas + $percentualAcrescimo - $percentualDesconto + $
 if ($_POST) {
 	$etapa = addslashes(trim($_POST["etapa"]));
 	$valor = addslashes(trim($_POST["valor"]));
-	$obs = addslashes(trim($_POST["obs"]));
+	$obs   = addslashes(trim($_POST["obs"]));
+	
+	$valor = emFormatoDinheiroSQL($valor);
 } else {
 	$etapa = 1;
 	$valor = $valorPromocional;
-	$obs = "";
+	$obs   = "";
 	
 	pageopen("periodos");
 }

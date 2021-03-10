@@ -94,7 +94,19 @@ while ($aluno = mysql_fetch_assoc($alunos)) {
 	$mensagem = str_replace("#CONTEUDO#", $conteudo, $mensagem);
 	
 	if (!empty($aluno->alu_email)) {
-        sendmail($aluno->alu_email, 'Englishware :: Aulas do Período ' . $periodo->per_descricao . ' :: ' . $aluno->alu_nome, $mensagem);
+		$ema_codigo = getProximoIdEmail();
+		
+		$query = " insert into emails
+					 ( ema_codigo, ema_data_inclusao, ema_remetente_email, ema_remetente_nome, ema_destinatario_email, ema_destinatario_nome, ema_assunto, ema_mensagem, ema_flg_enviado )
+				   values 
+					 ( '$ema_codigo', curdate(), 'fabibr@gmail.com', 'Fabiana Branchini', '$aluno->alu_email', '$aluno->alu_nome', 'Englishware :: $periodo->per_descricao :: $aluno->alu_nome', '$mensagem', 'N' ) ";
+		
+		$consulta = executeQuery($query);
+		
+		if (!$consulta) {
+			$erro = true;
+			showMessage(8, "Ocorreu um erro ao tentar inserir o registro na fila de e-mails!", "javascript:history.go(-1);");
+		}
     }
 }
 

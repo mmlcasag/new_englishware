@@ -48,7 +48,12 @@ function getEmailAulasDoPeriodo() {
 			<br>Confirmando as aulas para o período #PERIODO#:
 			#CONTEUDO#
 			<br>
-			<br>Abaixo seguem os dados bancários:
+			<br>Formas de pagamento:
+			<br>
+			<br><strong>PIX</strong>
+			<br>Chave 1: fabibr@gmail.com
+			<br>Chave 2: (54) 99974-6881
+			<br>Chave 3: 699.616.030-87
 			<br>
 			<br><strong>Banco Itaú (341)</strong>
 			<br>Agência: 3249
@@ -103,7 +108,13 @@ function getEmailReenvio() {
 		<h3>#NOME#,</h3>
 		<p align="left">
 			<br>Este é apenas um lembrete de que o pagamento do mês ainda não foi efetuado.
-			<br>Abaixo seguem os dados bancários:
+			<br>
+			<br>Formas de pagamento:
+			<br>
+			<br><strong>PIX</strong>
+			<br>Chave 1: fabibr@gmail.com
+			<br>Chave 2: (54) 99974-6881
+			<br>Chave 3: 699.616.030-87
 			<br>
 			<br><strong>Banco Itaú (341)</strong>
 			<br>Agência: 3249

@@ -290,3 +290,27 @@ function getRelatorioGeralPeriodo($per_codigo) {
 	
 	return executeQuery($query);
 }
+
+// Emails
+
+function getProximoIdEmail() {
+	$query  = sprintf(" SELECT COALESCE(MAX(e.ema_codigo),0) + 1 ema_codigo ");
+	$query .= sprintf(" FROM   emails e ");
+	
+    $result = executeQuery($query);
+	$value  = mysql_fetch_object($result);
+	
+	return $value->ema_codigo;
+}
+
+function getEmailsPendentesDeEnvio() {
+	$query  = sprintf(" select e.ema_codigo, e.ema_data_inclusao ");
+	$query .= sprintf(" ,      e.ema_remetente_email, e.ema_remetente_nome ");
+	$query .= sprintf(" ,      e.ema_destinatario_email, e.ema_destinatario_nome ");
+	$query .= sprintf(" ,      e.ema_assunto, e.ema_mensagem ");
+	$query .= sprintf(" from   emails e ");
+	$query .= sprintf(" where  e.ema_flg_enviado = 'N' ");
+	$query .= sprintf(" order  by e.ema_codigo ");
+	
+	return executeQuery($query);
+}
