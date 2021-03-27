@@ -11,12 +11,20 @@ require_once 'utils_mail.php';
 startDatabase();
 setTransactionLevel();
 
-foreach ($_POST["p_arr_alunos"] as $alu_codigo) {
+$per_codigo = $_POST["p_per_codigo"];
+$arr_alunos = $_POST["p_arr_alunos"];
+
+foreach ($arr_alunos as $alu_codigo) {
 	$aluno = getAluno($alu_codigo);
+	$periodo = getPeriodo($per_codigo);
+	$valores = getValoresPeriodoAluno($per_codigo, $alu_codigo);
 	
     $mensagem = getEmailReenvio();
 	$mensagem = str_replace("#NOME#", $aluno->alu_nome, $mensagem);
-	
+	$mensagem = str_replace("#PERIODO#", $periodo->per_descricao, $mensagem);
+	$mensagem = str_replace("#VALOR_SEM_DESCONTO#", emFormatoDinheiro($valores->total_aulas), $mensagem);
+	$mensagem = str_replace("#VALOR_COM_DESCONTO#", emFormatoDinheiro($valores->total_geral), $mensagem);
+    
     if (!empty($aluno->alu_email)) {
         $ema_codigo = getProximoIdEmail();
 		

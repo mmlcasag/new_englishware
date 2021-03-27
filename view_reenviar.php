@@ -9,7 +9,8 @@ require_once 'utils_db.php';
 
 startDatabase();
 
-$alunos = getTodosOsAlunos("1");
+$periodos = getTodosOsPeriodos(1);
+$alunos = getTodosOsAlunos(1);
 
 pageopen("reenviar");
 ?>
@@ -19,12 +20,30 @@ pageopen("reenviar");
 	<br/>
 	
 	<div class="form-group">
-		<label>Alunos:</label>
-		<select multiple name="p_arr_alunos[]" class="form-control" style="height:350px">
-		<?php while ($aluno = mysql_fetch_assoc($alunos)) { ?>
-			<option value="<?php echo $aluno['alu_codigo']?>"><?php echo $aluno['alu_nome']?></option>
-		<?php } ?>
-		</select>
+		<div class="row">
+			<div class="col-xs-12">
+				<label>Período:</label>
+				<select class="form-control" name="p_per_codigo">
+					<option value="">Selecione</option>
+					<?php while ($periodo = mysql_fetch_assoc($periodos)) { ?>
+						<option value="<?php echo $periodo["per_codigo"]?>" <?php echo ($aula['per_codigo'] == $periodo["per_codigo"] ? "selected" : "")?>><?php echo $periodo["per_descricao"]?></option>
+					<?php } ?>
+				</select>
+			</div>
+		</div>
+	</div>
+
+	<div class="form-group">
+		<div class="row">
+			<div class="col-xs-12">
+				<label>Alunos:</label>
+				<select multiple name="p_arr_alunos[]" class="form-control" style="height:350px">
+				<?php while ($aluno = mysql_fetch_assoc($alunos)) { ?>
+					<option value="<?php echo $aluno['alu_codigo']?>"><?php echo $aluno['alu_nome']?></option>
+				<?php } ?>
+				</select>
+			</div>
+		</div>
 	</div>
 	
 	<button type="submit" class="btn btn-primary">Reenviar E-mails</button>

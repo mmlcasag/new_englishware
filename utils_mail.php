@@ -105,9 +105,14 @@ function getEmailReenvio() {
 
 	<body>
 		
-		<h3>#NOME#,</h3>
+		<h3>Lembrete de Pagamento do Período #PERIODO#</h3> 
 		<p align="left">
-			<br>Este é apenas um lembrete de que o pagamento do mês ainda não foi efetuado.
+		    #NOME#,
+		    <br>
+		    <br>Este é apenas um lembrete de que o pagamento do período #PERIODO# ainda não foi efetuado.
+			<br>
+			<br>Valor sem desconto: R$ #VALOR_SEM_DESCONTO#
+			<br>Valor com desconto: R$ #VALOR_COM_DESCONTO#
 			<br>
 			<br>Formas de pagamento:
 			<br>
