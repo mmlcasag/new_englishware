@@ -22,8 +22,8 @@ foreach ($arr_alunos as $alu_codigo) {
     $mensagem = getEmailReenvio();
 	$mensagem = str_replace("#NOME#", $aluno->alu_nome, $mensagem);
 	$mensagem = str_replace("#PERIODO#", $periodo->per_descricao, $mensagem);
-	$mensagem = str_replace("#VALOR_SEM_DESCONTO#", emFormatoDinheiro($valores->total_aulas), $mensagem);
-	$mensagem = str_replace("#VALOR_COM_DESCONTO#", emFormatoDinheiro($valores->total_geral), $mensagem);
+	$mensagem = str_replace("#VALOR_SEM_DESCONTO#", emFormatoDinheiro($valores->total_sem_desconto), $mensagem);
+	$mensagem = str_replace("#VALOR_COM_DESCONTO#", emFormatoDinheiro($valores->total_com_desconto), $mensagem);
     
     if (!empty($aluno->alu_email)) {
         $ema_codigo = getProximoIdEmail();

@@ -294,7 +294,8 @@ function getRelatorioGeralPeriodo($per_codigo) {
 function getValoresPeriodoAluno($per_codigo, $alu_codigo) {
 	$query  = sprintf(" select al.alu_codigo, al.alu_nome, pa.pal_vlr_acrescimo, pa.pal_vlr_desconto, pa.pal_per_acrescimo, pa.pal_per_desconto ");
 	$query .= sprintf(" ,      sum(au.aul_preco) total_aulas ");
-	$query .= sprintf(" ,      sum(au.aul_preco) * (1 + (pa.pal_per_acrescimo / 100)) * (1 - (pa.pal_per_desconto  / 100)) + pa.pal_vlr_acrescimo - pa.pal_vlr_desconto total_geral ");
+	$query .= sprintf(" ,      sum(au.aul_preco) * (1 + (pa.pal_per_acrescimo / 100)) + pa.pal_vlr_acrescimo total_sem_desconto ");
+	$query .= sprintf(" ,      sum(au.aul_preco) * (1 + (pa.pal_per_acrescimo / 100)) * (1 - (pa.pal_per_desconto  / 100)) + pa.pal_vlr_acrescimo - pa.pal_vlr_desconto total_com_desconto ");
 	$query .= sprintf(" from   aulas           au ");
 	$query .= sprintf(" join   periodos_alunos pa on pa.per_codigo = au.per_codigo and pa.alu_codigo = au.alu_codigo ");
 	$query .= sprintf(" join   periodos        pe on pe.per_codigo = au.per_codigo ");
