@@ -123,6 +123,7 @@ pageopen("periodos")
     $linkIncluirAulas .= "&p_alu_codigo=" . $filtro_aluno;
   }
   ?>
+  <br />
   <a href="<?php echo $linkIncluirAulas ?>" class="btn btn-primary">Incluir Aula</a>
 	<button type="button" class="btn btn-primary" onclick="trocar()">Inverter Geral</button>
 	<button type="submit" class="btn btn-primary">Salvar Aulas</button>
@@ -139,6 +140,7 @@ pageopen("periodos")
 $(document).ready(function(){
 	$('#myTable').DataTable( {
 		"order": [[0, "asc"],[1, "asc"]],
+		"paging": false,
 		"language": {
 			"sEmptyTable": "Nenhum registro encontrado",
 			"sInfo": "Mostrando _START_ a _END_ de _TOTAL_ registros",
