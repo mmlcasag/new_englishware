@@ -67,10 +67,6 @@ function getEmailAulasDoPeriodo() {
 			<br>Agência: 0001
 			<br>C/C: 1275194-6
 			<br>
-			<br><strong>Banco Inter (077)</strong>
-			<br>Agência: 0001-9
-			<br>C/C: 979926-5
-			<br>
 			<br>CPF: 699.616.030.87
 			<br>
 			<br><b>Se desejar, solicitar pagamento via boleto.</b>
@@ -132,10 +128,6 @@ function getEmailReenvio() {
 			<br><strong>Banco Nubank (260)</strong>
 			<br>Agência: 0001
 			<br>C/C: 1275194-6
-			<br>
-			<br><strong>Banco Inter (077)</strong>
-			<br>Agência: 0001-9
-			<br>C/C: 979926-5
 			<br>
 			<br>CPF: 699.616.030.87
 			<br>
