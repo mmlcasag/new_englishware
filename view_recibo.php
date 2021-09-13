@@ -46,7 +46,7 @@ if ($_POST) {
 	$valor = addslashes(trim($_POST["valor"]));
 	$obs   = addslashes(trim($_POST["obs"]));
 	
-	$valor = emFormatoDinheiroSQL($valor);
+	$valor = emFormatoDinheiroSQL(str_replace(".", "", $valor));
 } else {
 	$etapa = 1;
 	$valor = $valorPromocional;
