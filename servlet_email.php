@@ -99,7 +99,7 @@ while ($aluno = mysql_fetch_assoc($alunos)) {
 		$query = " insert into emails
 					 ( ema_codigo, ema_data_inclusao, ema_remetente_email, ema_remetente_nome, ema_destinatario_email, ema_destinatario_nome, ema_assunto, ema_mensagem, ema_flg_enviado )
 				   values 
-					 ( '$ema_codigo', curdate(), 'fabibr@gmail.com', 'Fabiana Branchini', '$aluno->alu_email', '$aluno->alu_nome', 'Englishware :: $periodo->per_descricao :: $aluno->alu_nome', '$mensagem', 'N' ) ";
+					 ( '$ema_codigo', curdate(), 'fabibranchini@gmail.com', 'Fabiana Branchini', '$aluno->alu_email', '$aluno->alu_nome', 'Englishware :: $periodo->per_descricao :: $aluno->alu_nome', '$mensagem', 'N' ) ";
 		
 		$consulta = executeQuery($query);
 		

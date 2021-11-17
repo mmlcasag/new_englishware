@@ -11,8 +11,8 @@ function sendmail($to, $subject, $message) {
     $email    = new SendGrid\Email();
     
 	$email->addTo($to)
-	      ->addTo("fabibr@gmail.com")
-          ->setFrom("fabibr@gmail.com")
+	      ->addTo("fabibranchini@gmail.com")
+          ->setFrom("fabibranchini@gmail.com")
           ->setSubject($subject)
           ->setHtml($message);
 	
