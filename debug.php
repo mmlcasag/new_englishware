@@ -44,9 +44,9 @@ function getEmailAulasDoPeriodo() {
 			<br>C.Corrente: 22.536-2
 			<br>CPF: 699.616.030.87
 			<br>
-			<br><strong>Banco Santander</strong>
-			<br>Agência: 0189
-			<br>C.Corrente: 01.030573.1
+			<br><strong>Banco Bradesco</strong>
+			<br>Agência: 1775
+			<br>C.Corrente: 42175-8
 			<br>CPF: 699.616.030.87
 			<br>
 			<br>Esta mensagem foi gerada automaticamente. Favor não responder este e-mail.
@@ -88,9 +88,9 @@ function getEmailReenvio() {
 			<br>C.Corrente: 22.536-2
 			<br>CPF: 699.616.030.87
 			<br>
-			<br><strong>Banco Santander</strong>
-			<br>Agência: 0189
-			<br>C.Corrente: 01.030573.1
+			<br><strong>Banco Bradesco</strong>
+			<br>Agência: 1775
+			<br>C.Corrente: 42175-8
 			<br>CPF: 699.616.030.87
 			<br>
 			<br>Esta mensagem foi gerada automaticamente. Favor não responder este e-mail.

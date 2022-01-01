@@ -59,9 +59,9 @@ function getEmailAulasDoPeriodo() {
 			<br>Agência: 3249
 			<br>C/C: 22.536-2
 			<br>
-			<br><strong>Banco Santander (033)</strong>
-			<br>Agência: 0189
-			<br>C/C: 01.030573.1
+			<br><strong>Banco Bradesco (237)</strong>
+			<br>Agência: 1775
+			<br>C/C: 42175-8
 			<br>
 			<br><strong>Banco Nubank (260)</strong>
 			<br>Agência: 0001
@@ -121,9 +121,9 @@ function getEmailReenvio() {
 			<br>Agência: 3249
 			<br>C/C: 22.536-2
 			<br>
-			<br><strong>Banco Santander (033)</strong>
-			<br>Agência: 0189
-			<br>C/C: 01.030573.1
+			<br><strong>Banco Bradesco (237)</strong>
+			<br>Agência: 1775
+			<br>C/C: 42175-8
 			<br>
 			<br><strong>Banco Nubank (260)</strong>
 			<br>Agência: 0001
