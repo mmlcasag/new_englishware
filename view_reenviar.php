@@ -51,6 +51,10 @@ pageopen("reenviar");
 
 <script>
 function reenviar() {
+	if (document.forms[0].p_per_codigo.value == "") {
+		alert("Selecione o período que você deseja reenviar a cobrança");
+		return false;
+	}
 	if (confirm("Você tem certeza que deseja reenviar os e-mails para todos os alunos selecionados?")) {
 		document.main.submit();
 	}
